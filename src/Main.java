@@ -9,6 +9,7 @@ public class Main  {
         Scanner in = new Scanner(new File("text.txt"));
         setList(in);
         System.out.println(mainList);
+        System.out.println(search(00001));
     }
 
     public static void setList(Scanner in) {
@@ -22,6 +23,12 @@ public class Main  {
         }
     }
 
-
-
+    public static Item search(int itemID) {
+        for (int i = 0; i < mainList.size(); i++) {
+            if (mainList.get(i).gettID() == itemID) {
+                return mainList.get(i);
+            }
+        }
+        return new Item();
+    }
 }
