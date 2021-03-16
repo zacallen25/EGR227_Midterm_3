@@ -1,22 +1,22 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
 
-public class Main {
+public class Main  {
+
     public static List<Item> mainList = new LinkedList<Item>();
 
-    public static void main(String[] args) {
-
-
-
-
-
+    public static void main(String[] args) throws FileNotFoundException {
+        Scanner in = new Scanner(new File("text.txt"));
+        setList(in);
+        System.out.println(mainList);
     }
 
     public static void setList(Scanner in) {
-        int i = 0;
         while(in.hasNextLine()) {
             int ID = in.nextInt();
-            String name = in.nextLine();
-            String state = in.next();
+            String name = in.next();
+            int state = in.nextInt();
             String location = in.next();
             Item newItem = new Item(ID, name, new State(state, location));
             mainList.add(newItem);

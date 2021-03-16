@@ -1,14 +1,28 @@
 public class State {
-    String state;
-    String location;
+    int state;
+    String destination;
 
     public State() {
-        this.state = "None";
-        this.location = "None";
+        state = 999;
+        this.destination = "None";
     }
 
-    public State(String state, String location) {
+    public State(int state, String destination) {
         this.state = state;
-        this.location = location;
+        this.destination = destination;
+    }
+
+    public String getCurrentState() {
+        return switch (state) {
+            case 0 -> "outbound";
+            case 1 -> "in warehouse";
+            case 2 -> "inbound";
+            default -> "unknown";
+        };
+    }
+
+    @Override
+    public String toString() {
+        return getCurrentState() + " Destination: " + destination;
     }
 }

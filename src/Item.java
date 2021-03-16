@@ -15,5 +15,8 @@ public class Item {
         this.state = state;
     }
 
-
+    @Override
+    public String toString() {
+        return "ID: " + ID + " Name: " + name + " State: " + state;
+    }
 }
