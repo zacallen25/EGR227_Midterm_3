@@ -19,4 +19,30 @@ public class Item {
     public String toString() {
         return "ID: " + ID + " Name: " + name + " State: " + state;
     }
+
+    public int gettID() {
+        return ID;
+    }
+
+    public String getName() {return name;}
+
+    public State getState() {return state; }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+
+    public void setState(int status, String destination) {
+        this.state = new State(status, destination);
+    }
+
+
 }

@@ -7,9 +7,14 @@ public class State {
         this.destination = "None";
     }
 
-    public State(int state, String destination) {
+    public State(int state, String dest) {
         this.state = state;
-        this.destination = destination;
+        if (dest.equals(".")) {
+            this.destination = "None";
+        }
+        else {
+            this.destination = dest;
+        }
     }
 
     public String getCurrentState() {
@@ -19,6 +24,18 @@ public class State {
             case 2 -> "inbound";
             default -> "unknown";
         };
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public void setState(int state) {
+        this.state = state;
+    }
+
+    public void setDestination(String destination) {
+        this.destination = destination;
     }
 
     @Override
