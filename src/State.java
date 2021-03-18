@@ -17,7 +17,11 @@ public class State {
         }
     }
 
-    public String getCurrentState() {
+    public int getStateInt() {
+        return state;
+    }
+
+    public String getStateAsString() {
         return switch (state) {
             case 0 -> "outbound";
             case 1 -> "in warehouse";
@@ -30,7 +34,7 @@ public class State {
         return destination;
     }
 
-    public void setState(int state) {
+    public void setStateInt(int state) {
         this.state = state;
     }
 
@@ -40,6 +44,6 @@ public class State {
 
     @Override
     public String toString() {
-        return getCurrentState() + " Destination: " + destination;
+        return getStateAsString() + "\nDestination: " + destination;
     }
 }
